@@ -8,6 +8,15 @@ const API_KEY = '9c55e2fb81e17cc16ad45b467ce8fd8a'
 
 class App extends Component {
 
+  state = {
+    temperature: undefined,
+    city: undefined,
+    country: undefined,
+    humidity: undefined,
+    description: undefined,
+    error: undefined
+  }
+   
   getWeather = async (e) =>{
     e.preventDefault();
     const city = e.target.elements.city.value;
