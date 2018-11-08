@@ -1,12 +1,12 @@
-import React, {Component} from 'react';
+import React from 'react';
 
 
-class Form extends Component {
+const Form = (props) => {
 
-    render (){
+  
         return (
             <div>
-               <form onSubmit={this.props.getWeather}>
+               <form onSubmit={props.getWeather}>
 
                    <input type="text" name="city" placeholder='City' />
                    <input type="text" name='country' placeholder='Country' />
@@ -16,7 +16,7 @@ class Form extends Component {
 
             </div>
         )
-    }
+    
 }
 
 
