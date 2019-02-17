@@ -14,6 +14,7 @@ class App extends Component {
     country: undefined,
     humidity: undefined,
     description: undefined,
+    icon: undefined,
     error: undefined
   }
    
@@ -31,6 +32,7 @@ class App extends Component {
       country: data.sys.country,
       humidity: data.main.humidity,
       description: data.weather[0].description,
+      icon: data.weather[0].icon,
       error: ""
     })
   } else {
@@ -40,37 +42,39 @@ class App extends Component {
       country: undefined, 
       humidity: undefined, 
       description: undefined,
+      icon: undefined,
       error: "Please enter the value."
   })
 }
   }
 
   render() {
+    const round= Math.round(this.state.temperature)
     return (
+      
       <div>
-      <div className='wrapper'>
-        
-          <div className="container-fluid">
-            <div className="row">
-              <div className="col-xs-5 col-md-6 title-container">
-                <Titles />
-              </div>
-              <div className="col-xs-7 col-md-6 form-container">
+        <header > <Titles /></header>
+      <div className='wrapper'>     
+                    
+            
+              <div className='form'>
+              
                 <Form getWeather={this.getWeather} />
+                <div className='cont'>
                 <Weather 
                   temperature={this.state.temperature} 
                   humidity={this.state.humidity}
                   city={this.state.city}
                   country={this.state.country}
                   description={this.state.description}
+                  icon={this.state.icon}
                   error={this.state.error}
                 />
-              
-            </div>
+              </div>
+           
           </div>
         </div>
       </div>
-    </div>
     );
   }
 }

@@ -1,15 +1,18 @@
 @import url('https://fonts.googleapis.com/css?family=Merriweather:100,200,300,300i,400,400i,700');
 @import url('https://fonts.googleapis.com/css?family=Roboto+Slab:400,700');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400');
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
 
 body {
   font-family: "Open Sans", serif;
+  background: url(https://imgur.com/OzGFnoj.jpg) center center;
+background-size: cover;
 }
 
 
 
 .wrapper {
-  background-color: #000;
+  background: rgba(0, 0, 0, 0.6);
   height: 100vh;
   width: 100%;
   display: flex;
@@ -18,40 +21,41 @@ body {
   -moz-box-shadow: 0 0 10px rgba(0,0,0,.3);
   -webkit-box-shadow: 0 0 10px rgba(0,0,0,.3);
   flex-wrap: wrap;
+  
 }
 
 
-
-.title-container {
-  height: 90vh;
-  background: url("img/index-2.jpg") center center no-repeat ;
-
-  background-size: cover;
-  
+.cont{
   display: flex;
-  align-items: flex;
   justify-content: center;
-  text-align: center;
-  color: #000;
+ 
+}
+
+
+.title-container__title{
+  color: white;
+  font-size: 3em;
+  position: absolute;
+  top: 3%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  font-family: 'Quicksand', sans-serif;
+
   
 }
 
-.title-container__title {
-  font-size: 30px;
-  letter-spacing: 2px;
-  line-height: 1.3;
-  font-family: 'Roboto Slab', serif;
-  font-weight: bold;
-  color: white;
+img{
+  width: 30%
 }
 
-
-
-.form-container {
-  background-color: #2c3e50;
-  height: 90vh;
+.form {
+ 
+  height: 100vh;
   padding-top: 100px;
   padding-left: 50px;
+  width: 65vw;
+  color:white;
+
 }
 
 input[type="text"] {
@@ -73,7 +77,7 @@ input[type="text"] {
 }
 
 input:-webkit-autofill {
-    -webkit-box-shadow: 0 0 0 30px #2c3e50 inset;
+   
     -webkit-text-fill-color: #fff !important;
 }
 
@@ -87,7 +91,7 @@ button {
   font-size: 15px;
   cursor: pointer;
   background-color: #f16051;
-  color: #fff;
+  color: white;
   font-weight: 100;
 }
 
@@ -104,9 +108,14 @@ button:active {
   letter-spacing: 2px;
 }
 
+.weather__temp{
+  font-size: 5em;
+  /* padding: 20px 200px; */
+  /* width: 1000px; */
+}
+
 .weather__key {
   color: #f16051;
-  border-bottom: solid 2px rgba(255,255,255,0.06);
   padding: 20px 0 20px 0;
   font-weight: 400;
 }
@@ -234,4 +243,30 @@ button:active {
   }
   
   
+}
+
+@media (max-width: 375px){
+  .title-container__title {
+    /* margin-top: 150px;
+    font-size: 50px;
+    letter-spacing: 2px;
+    line-height: 1.3;
+    font-family: 'Roboto Slab', serif;
+    font-weight: bold;
+    color: white;
+    align-content: center;
+    width:auto; */
+    font-size: 2em;
+    top: 7%;
+}
+
+.cont{
+  display: flex;
+    -ms-flex-pack: center;
+    justify-content: start;
+}
+
+.form-container {
+  width: auto;
+}
 }
