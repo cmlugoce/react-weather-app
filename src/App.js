@@ -49,7 +49,6 @@ class App extends Component {
   }
 
   render() {
-    const round= Math.round(this.state.temperature)
     return (
       
       <div>
